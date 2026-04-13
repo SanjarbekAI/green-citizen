@@ -4,6 +4,24 @@ import uuid
 from django.db import models
 
 
+class Language(models.TextChoices):
+    RU = "RU", "Russian"
+    EN = "EN", "English"
+    CRL = "CRL", "Cyrillic"
+    UZ = "UZ", "Uzbek"
+
+
+class DeviceTheme(models.TextChoices):
+    DARK = "DARK", "Dark"
+    LIGHT = "LIGHT", "Light"
+
+
+class DeviceType(models.TextChoices):
+    IOS = "IOS", "iOS"
+    ANDROID = "ANDROID", "Android"
+    ALL = "ALL", "ALL"
+
+
 class BaseModel(models.Model):
     """
     Abstract base model with UUID primary key and timestamp fields
@@ -95,5 +113,3 @@ class Media(BaseModel):
                 return file_type
 
         return cls.FileType.OTHER
-
-

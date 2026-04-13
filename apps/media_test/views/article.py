@@ -1,5 +1,6 @@
 import logging
 
+from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 
 from apps.media_test.models.article import Article
@@ -50,6 +51,7 @@ class ArticleCreateView(APIView):
         "gallery_uuids": ["uuid1", "uuid2"]                        // optional
     }
     """
+    permission_classes = [AllowAny]
 
     def post(self, request):
         serializer = ArticleCreateSerializer(data=request.data)

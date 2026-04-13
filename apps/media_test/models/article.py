@@ -2,7 +2,7 @@ import logging
 
 from django.db import models
 
-from apps.shared.models import BaseModel
+from apps.shared.models import BaseModel, Media
 
 logger = logging.getLogger(__name__)
 
@@ -20,7 +20,7 @@ class Article(BaseModel):
 
     # Single media reference (e.g. cover image)
     thumbnail = models.ForeignKey(
-        'shared.Media',
+        Media,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
@@ -29,7 +29,7 @@ class Article(BaseModel):
 
     # Multiple media references (e.g. photo gallery)
     gallery = models.ManyToManyField(
-        'shared.Media',
+        Media,
         blank=True,
         related_name='article_galleries',
     )
@@ -42,4 +42,3 @@ class Article(BaseModel):
 
     def __str__(self):
         return self.title
-

@@ -1,6 +1,7 @@
 import logging
 
 from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.permissions import AllowAny
 from rest_framework.views import APIView
 
 from apps.shared.models import Media
@@ -16,6 +17,7 @@ class MediaUploadView(APIView):
     POST: Upload a new media file.
     """
     parser_classes = [MultiPartParser, FormParser]
+    permission_classes = [AllowAny]
 
     def post(self, request):
         serializer = MediaUploadSerializer(data=request.data)

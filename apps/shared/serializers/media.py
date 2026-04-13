@@ -65,4 +65,3 @@ class MediaDetailSerializer(serializers.ModelSerializer):
         elif obj.file:
             return obj.file.url
         return None
-

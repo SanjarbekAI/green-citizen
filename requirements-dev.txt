@@ -1,4 +1,8 @@
 asgiref==3.11.1
 Django==5.2.13
 djangorestframework==3.17.1
+django-environ==0.12.0
+drf-spectacular==0.28.0
+psycopg2-binary==2.9.10
+pyTelegramBotAPI==4.25.0
 sqlparse==0.5.5

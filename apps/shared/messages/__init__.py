@@ -2,6 +2,7 @@ import logging
 from typing import Dict
 
 from .common import EXCEPTION_MESSAGES
+from .media import MEDIA_MESSAGES
 from .shared import SHARED_MESSAGES
 from .types import MessageTemplate
 from .users import USER_MESSAGES
@@ -15,6 +16,7 @@ MESSAGES: Dict[str, MessageTemplate] = {
     **VERSION_MESSAGES,
     **USER_MESSAGES,
     **EXCEPTION_MESSAGES,
+    **MEDIA_MESSAGES,
 }
 
 
@@ -25,8 +27,9 @@ def _validate_messages():
     message_sources = [
         ("SHARED_MESSAGES", SHARED_MESSAGES),
         ("VERSION_MESSAGES", VERSION_MESSAGES),
-        ("VERSION_MESSAGES", USER_MESSAGES),
+        ("USER_MESSAGES", USER_MESSAGES),
         ("EXCEPTION_MESSAGES", EXCEPTION_MESSAGES),
+        ("MEDIA_MESSAGES", MEDIA_MESSAGES),
     ]
 
     duplicates = []
@@ -53,4 +56,5 @@ __all__ = [
     'VERSION_MESSAGES',
     'USER_MESSAGES',
     'EXCEPTION_MESSAGES',
+    'MEDIA_MESSAGES',
 ]

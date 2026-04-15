@@ -12,6 +12,7 @@ idna==3.11
 inflection==0.5.1
 jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
+phonenumbers==9.0.28
 psycopg2-binary==2.9.10
 PyJWT==2.12.1
 pyTelegramBotAPI==4.25.0

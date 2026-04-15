@@ -40,7 +40,6 @@ MY_APPS = [
     'apps.users',
     'apps.notifications',
     'apps.integrations',
-    'apps.media_test',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS

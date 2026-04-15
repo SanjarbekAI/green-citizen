@@ -42,19 +42,38 @@ USER_MESSAGES: Dict[str, MessageTemplate] = {
     "PHONE_NUMBER_EXIST_ERROR": {
         "id": "PHONE_NUMBER_EXIST_ERROR",
         "messages": {
-            "en": "These phone numbers are already exists ({phone_numbers})",
-            "uz": "Ushbu telefon raqamlar allaqachon qo'shilgan ({phone_numbers})",
-            "ru": "Эти номера телефонов уже существуют ({phone_numbers})",
+            "en": "Phone number already exists",
+            "uz": "Bu telefon raqami allaqachon mavjud",
+            "ru": "Этот номер телефона уже существует",
         },
         "status_code": 400
     },
-    "INVALID_PHONE_NUMBER_ERROR": {
-        "id": "INVALID_PHONE_NUMBER_ERROR",
+    "INVALID_PHONE_NUMBER_FORMAT": {
+        "id": "INVALID_PHONE_NUMBER_FORMAT",
         "messages": {
-            "en": "These phone numbers are not valid ({phone_numbers})",
-            "uz": "Ushbu telefon raqamlar noto'g'ri ({phone_numbers})",
-            "ru": "Эти номера телефонов недействительны ({phone_numbers})",
+            "en": "Invalid phone number format",
+            "uz": "Noto'g'ri telefon raqami formati",
+            "ru": "Неверный формат номера телефона",
         },
         "status_code": 400
-    }
+    },
+    "USER_REGISTERED_SUCCESSFULLY": {
+        "id": "USER_REGISTERED_SUCCESSFULLY",
+        "messages": {
+            "en": "User registered successfully",
+            "uz": "Foydalanuvchi muvaffaqiyatli ro'yxatdan o'tdi",
+            "ru": "Пользователь успешно зарегистрирован",
+        },
+        "status_code": 201
+    },
+    "INVALID_LANGUAGE_TYPE": {
+        "id": "INVALID_LANGUAGE_TYPE",
+        "messages": {
+            "en": "Invalid language type",
+            "uz": "Noto'g'ri til tipi",
+            "ru": "Неверный тип языка"
+        },
+        "status_code": 400
+    },
+
 }

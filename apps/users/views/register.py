@@ -23,9 +23,15 @@ class RegisterAPIView(APIView):
         # send verification code to the user's phone number
         send_verification_code.delay(user.id)
 
+        tokens = user.get_tokens()
+        data = {
+            "user": serializer.data,
+            "tokens": tokens
+        }
+
         return CustomResponse.success(
             request=request,
-            data=serializer.data,
+            data=data,
             message_key="USER_REGISTERED_SUCCESSFULLY"
         )
 

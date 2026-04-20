@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 
 from apps.shared.utils.custom_response import CustomResponse
 from apps.users.serializers.register import RegisterSerializer
-from apps.users.utils.verification_code import send_verification_code, generate_verification_code
+from apps.users.utils.verification_code import send_verification_code
 
 
 class RegisterAPIView(APIView):
@@ -20,10 +20,8 @@ class RegisterAPIView(APIView):
             )
         user = serializer.save()
 
-        # send verification code to the user's phone number or email here if needed
-        code = generate_verification_code()
-        print(code, "Verification code for user registration")
-        send_verification_code(user, code)
+        # send verification code to the user's phone number
+        send_verification_code.delay(user.id)
 
         return CustomResponse.success(
             request=request,

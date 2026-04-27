@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # -------------------------------------------------------------------
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +45,7 @@ MY_APPS = [
     'apps.users',
     'apps.notifications',
     'apps.integrations',
+    'apps.news',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS
@@ -56,6 +58,7 @@ INSTALLED_APPS += MY_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -109,6 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # INTERNATIONALIZATION
 # -------------------------------------------------------------------
 
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('en', 'English'),
@@ -204,3 +208,7 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': crontab(minute='*/1'),
     }
 }
+
+# -------------------------------------------------------------------
+# LANGUAGES CONFIG
+# -------------------------------------------------------------------

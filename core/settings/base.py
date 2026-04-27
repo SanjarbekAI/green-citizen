@@ -46,6 +46,7 @@ MY_APPS = [
     'apps.notifications',
     'apps.integrations',
     'apps.news',
+    'apps.services',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS

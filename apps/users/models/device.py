@@ -7,6 +7,7 @@ from django.utils import timezone
 from apps.shared.models import BaseModel, Language, DeviceType, DeviceTheme
 from apps.users.models.users import User
 
+
 class AppVersion(BaseModel):
     """
     Model to track app versions for analytics and compatibility checks.
@@ -28,6 +29,8 @@ class AppVersion(BaseModel):
         blank=True,
         help_text="Changelog or release notes for this version"
     )
+    is_force = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'app_versions'
@@ -444,3 +447,5 @@ class TokenBlocklist(BaseModel):
         if self.is_expired:
             return timedelta(0)
         return self.expires_at - timezone.now()
+
+
